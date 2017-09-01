@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit_page</title>
+</head>
+<body>
+<form action="{% url 'blog:edit_action' %}" method="post">
+    {% csrf_token %}
+    <label>article title
+        <input type="text" name="title"/>
+    </label>
+    <br/>
+
+    <label>article content
+        <input type="text" name="content"/>
+    </label>
+    <br/>
+    <input type="submit" value="submit">
+</form>
+
+</body>
+</html>

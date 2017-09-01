@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>article_page</title>
+</head>
+<body>
+<h1>{{ article.title }}</h1>
+<br/>
+<h3>{{ article.content }}</h3>
+<br/>
+<a href="{% url 'blog:article_page' article_id %}">modify</a>
+</body>
+</html>
