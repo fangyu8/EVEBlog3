@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -122,4 +123,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+# 管理django静态文件static
 STATIC_URL = '/static/'
