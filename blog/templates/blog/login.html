@@ -48,7 +48,7 @@
             <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                 <div class="layui-tab-item layui-show">
                     <div class="layui-form layui-form-pane">
-                        <form action="{% url 'blog:login' %}" method="post" enctype="multipart/form-data">
+                        <form action="{% url 'blog:login_action' %}" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="layui-form-item">
                                 <label for="L_email" class="layui-form-label">邮箱</label>
@@ -61,28 +61,29 @@
                             <div class="layui-form-item">
                                 <label for="L_pass" class="layui-form-label">密码</label>
                                 <div class="layui-input-inline">
-                                    <input type="password" id="L_pass" name="pass" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+                                    <input type="password" id="L_pass" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
 
-
-                            <div class="layui-form-item">
-                                <label for="L_vercode" class="layui-form-label">验证码</label>
-                                <div class="layui-input-inline">
+{##}
+{#                            <div class="layui-form-item">#}
+{#                                <label for="L_vercode" class="layui-form-label">验证码</label>#}
+{#                                <div class="layui-input-inline">#}
 {#                                    <input type="text" id="L_vercode" name="vercode" required lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">#}
-                                     <span style="color: #cc0000;">{{ user_formlogin.captcha }}</span>
-                                </div>
-                                <div class="layui-form-mid">
-                                    <button id='js-captcha-refresh' type="button">刷新验证码</button>
-{#                                    <span style="color: #cc0000;">{{ reg_form.captcha }}</span>#}
-                                </div>
-                            </div>
+{#                                     <span style="color: #cc0000;">{{ user_formlogin.captcha }}</span>#}
+{#                                </div>#}
+{#                                <div class="layui-form-mid">#}
+{#                                    <button id='js-captcha-refresh' type="button">刷新验证码</button>#}
+{#                                    <span style="color: #cc0000;">{{ user_formlogin.captcha }}</span>#}
+{#                                </div>#}
+{#                            </div>#}
 
 
                             <div class="layui-form-item">
                                 <button class="layui-btn" lay-filter="*" lay-submit>立即登录</button>
                                 <span style="padding-left: 20px;"><a href="{% url 'blog:forget' %}">忘记密码?</a></span>
                             </div>
+                            {{ errors }}
 
                         </form>
 
@@ -104,16 +105,16 @@
     </p>
 </div>
 
-<script>
-    $('#js-captcha-refresh').click(function(){
-         $.get("?newsn=1", function(result){
-            alert(result);
-             $('.captcha').attr("src",result);
-             $('#id_captcha_0').attr("value",result.split('/')[3]);
-          });
-    return false;
-});
-</script>
+{#<script>#}
+{#    $('#js-captcha-refresh').click(function(){#}
+{#         $.get("?newsn=1", function(result){#}
+{#            alert(result);#}
+{#             $('.captcha').attr("src",result);#}
+{#             $('#id_captcha_0').attr("value",result.split('/')[3]);#}
+{#          });#}
+{#    return false;#}
+{#});#}
+{#</script>#}
 
 </body>
 </html>

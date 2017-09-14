@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/css/global.css">
+</head>
+<body>
+
+{#header#}
+<div class="header">
+    <div class="main">
+        <a class="logo" href="/" title="Fly">Fly社区</a>
+        <div class="nav">
+            <a class="nav-this" href="jie/index.html">
+                <i class="iconfont icon-wenda"></i>交流
+            </a>
+            <a href="/case/2017/" target="_blank">
+                <i class="iconfont icon-iconmingxinganli" style="top: 20px"></i>案例
+
+            </a>
+            <a href="http://www.layui.com/" target="_blank">
+                <i class="iconfont icon-ui"></i>框架
+            </a>
+        </div>
+
+        <div class="nav-user">
+            <!-- 登入后的状态 -->
+            <a class="avatar" href="blog/index.html">
+                <img src="/static/layui/images/fly/7.jpg">
+                <cite>{{ email }}</cite>
+                <i>VIP3</i>
+            </a>
+
+            <div class="nav">
+                <a href="/user/set/"><i class="iconfont icon-shezhi"></i>设置</a>
+                <a href="{% url 'blog:index' %}"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>退出</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{#main form#}
+<div class="main layui-clear">
+    <div class="wrap">
+        <div class="content">
+            <div class="fly-tab">
+                <div class="layui-tab layui-tab-brief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this"><a href="/">首页</a></li>
+                        <li><a href="/jie/">全部帖</a></li>
+                        <li><a href="/jie/unsolved/">未结帖</a></li>
+                        <li><a href="/jie/solved/">已采纳</a></li>
+                        <li><a href="/jie/wonderful/">精华帖</a></li>
+                        <li><a href="/user/">我的帖</a></li>
+                    </ul>
+                </div>
+                <i class="layui-icon fly-search"></i></div>
+            <ul class="fly-panel fly-list">
+                <li><a href="/u/336" class="fly-avatar"> <img src="//cdn.layui.com/avatar/336.jpg?t=1493709104721"
+                                                              alt="纸飞机"> </a>
+                    <h2><a href="http://layim.layui.com/?form=fly_index#getAuth" target="_blank"
+                           style="color: #5FB878;">加入 LayIM 会员群，与上千情怀开发者隔空交流</a></h2>
+                    <div class="fly-list-info"><a href="/u/336" user=""> <cite>纸飞机</cite> <i
+                            class="iconfont icon-renzheng"></i> </a> <span>3天前</span> <span>快速通道</span></div>
+                </li>
+                <li><a href="/u/168" class="fly-avatar"> <img src="//cdn.layui.com/avatar/168.jpg?t=1503536597755"
+                                                              alt="贤心"> </a>
+                    <h2><a href="/jie/14648/">layui 2.1.3 发布，进一步稳定</a> <span class="fly-badge fly-badge-stick">置顶</span>
+                    </h2>
+                    <div class="fly-list-info"><a href="/u/168" user=""> <cite>贤心</cite> <i
+                            class="iconfont icon-renzheng" title="认证信息：layui作者"></i> </a> <span>4小时前</span>
+                        <span>动态</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 27
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 453-->    </span></div>
+                </li>
+                <li><a href="/u/168" class="fly-avatar"> <img src="//cdn.layui.com/avatar/168.jpg?t=1503536597755"
+                                                              alt="贤心"> </a>
+                    <h2><a href="/jie/14654/">除了 layui，两个独立组件：layer 和 layDate 也已同步更新</a> <span
+                            class="fly-badge fly-badge-stick">置顶</span></h2>
+                    <div class="fly-list-info"><a href="/u/168" user=""> <cite>贤心</cite> <i
+                            class="iconfont icon-renzheng" title="认证信息：layui作者"></i> </a> <span>3小时前</span>
+                        <span>动态</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 7
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 151-->    </span></div>
+                </li>
+                <li><a href="/u/336" class="fly-avatar"> <img src="//cdn.layui.com/avatar/336.jpg?t=1493709104721"
+                                                              alt="纸飞机"> </a>
+                    <h2><a href="/jie/14433/">社区飞吻达到一定数目，将可成为 “layui 高级应用者”</a> <span class="fly-badge fly-badge-stick">置顶</span>
+                    </h2>
+                    <div class="fly-list-info"><a href="/u/336" user=""> <cite>纸飞机</cite> <i
+                            class="iconfont icon-renzheng" title="认证信息：官方人员"></i> </a> <span>3天前</span> <span>公告</span>
+                        <span class="fly-list-kiss" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 10</span> <span
+                                class="fly-list-nums">       <i class="iconfont icon-pinglun1" title="回答"></i> 38
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 1390-->    </span></div>
+                </li>
+            </ul>
+            <ul class="fly-panel fly-list">
+                <li><a href="/u/6651792" class="fly-avatar"> <img src="//res.layui.com/images/fly/avatar/0.jpg"
+                                                                  alt="武小贱"> </a>
+                    <h2><a href="/jie/14683/">表格后台传过来的时间戳和状态栏的显示问题</a></h2>
+                    <div class="fly-list-info"><a href="/u/6651792" user=""> <cite>武小贱</cite> </a> <span>刚刚</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 0
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 4-->    </span></div>
+                </li>
+                <li><a href="/u/6263376" class="fly-avatar"> <img src="//res.layui.com/images/fly/avatar/5.jpg"
+                                                                  alt="gloryboy"> </a>
+                    <h2><a href="/jie/14682/">关于数据表格问题求教...</a></h2>
+                    <div class="fly-list-info"><a href="/u/6263376" user=""> <cite>gloryboy</cite> </a>
+                        <span>36分钟前</span> <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 30</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 1
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 7-->    </span></div>
+                </li>
+                <li><a href="/u/6463968" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/FE113726006FCE8F249301DF3CBA0CCE/100" alt="三克"> </a>
+                    <h2><a href="/jie/14681/">IE8的文本模式总是为IE7</a></h2>
+                    <div class="fly-list-info"><a href="/u/6463968" user=""> <cite>三克</cite> </a> <span>1小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 3
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 22-->    </span></div>
+                </li>
+                <li><a href="/u/6666072" class="fly-avatar"> <img src="//res.layui.com/images/fly/avatar/5.jpg"
+                                                                  alt="繁华树下"> </a>
+                    <h2><a href="/jie/14680/">跟新后错误求助</a></h2>
+                    <div class="fly-list-info"><a href="/u/6666072" user=""> <cite>繁华树下</cite> </a> <span>1小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 6
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 43-->    </span></div>
+                </li>
+                <li><a href="/u/6665736" class="fly-avatar"> <img src="//res.layui.com/images/fly/avatar/11.jpg"
+                                                                  alt="kangwa"> </a>
+                    <h2><a href="/jie/14679/">无意中发现layer mobile 弹出在iphone6s上面严重bug</a></h2>
+                    <div class="fly-list-info"><a href="/u/6665736" user=""> <cite>kangwa</cite> </a> <span>1小时前</span>
+                        <span>分享</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 0
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 26-->    </span></div>
+                </li>
+                <li><a href="/u/6665400" class="fly-avatar"> <img src="//res.layui.com/images/fly/avatar/1.jpg"
+                                                                  alt="符号"> </a>
+                    <h2><a href="/jie/14678/">layim支持客服模式吗</a></h2>
+                    <div class="fly-list-info"><a href="/u/6665400" user=""> <cite>符号</cite> </a> <span>1小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 1
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 18-->    </span></div>
+                </li>
+                <li><a href="/u/2889936" class="fly-avatar"> <img
+                        src="http://q.qlogo.cn/qqapp/101235792/2643DB75158E5BEED71AE926EE9E2E49/100" alt="舍不得"> </a>
+                    <h2><a href="/jie/14677/">请求大神帮帮忙 帮我看一看文件上传哪里有问题</a></h2>
+                    <div class="fly-list-info"><a href="/u/2889936" user=""> <cite>舍不得</cite> </a> <span>1小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 11
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 36-->    </span></div>
+                </li>
+                <li><a href="/u/5696208" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/089DD391CFB79A7E81888E87A5FDF4F8/100" alt="E"> </a>
+                    <h2><a href="/jie/14676/">layer.open出laytpl模板引擎中的表单时，laydate控件失效！！！</a></h2>
+                    <div class="fly-list-info"><a href="/u/5696208" user=""> <cite>E</cite> </a> <span>1小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 2
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 20-->    </span></div>
+                </li>
+                <li><a href="/u/6625248" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/7557D292C9FABB735FF32554CBC3D289/100" alt="阳明弟子"> </a>
+                    <h2><a href="/jie/14675/">三级联动select必须点选两次才会联动</a></h2>
+                    <div class="fly-list-info"><a href="/u/6625248" user=""> <cite>阳明弟子</cite> </a> <span>1小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 20</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 2
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 22-->    </span></div>
+                </li>
+                <li><a href="/u/3619224" class="fly-avatar"> <img
+                        src="http://q.qlogo.cn/qqapp/101235792/8C760280BA072A35CE2A63F540DE1FF3/100" alt="雎鸠"> </a>
+                    <h2><a href="/jie/14674/">laydate空间的mark后台发生变化之后，应该如何变更前端的mark？用element.init</a></h2>
+                    <div class="fly-list-info"><a href="/u/3619224" user=""> <cite>雎鸠</cite> </a> <span>1小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 2
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 11-->    </span></div>
+                </li>
+                <li><a href="/u/6285720" class="fly-avatar"> <img src="//res.layui.com/images/fly/avatar/5.jpg"
+                                                                  alt="liuhuan"> </a>
+                    <h2><a href="/jie/14673/">数据列表必须设置长度吗？</a></h2>
+                    <div class="fly-list-info"><a href="/u/6285720" user=""> <cite>liuhuan</cite> </a> <span>2小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 1
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 28-->    </span></div>
+                </li>
+                <li><a href="/u/6661704" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/558E3628C556CE1649BB643CEA3DB111/100" alt="风吹泪落"> </a>
+                    <h2><a href="/jie/14672/">layer层层内部弹框问题</a></h2>
+                    <div class="fly-list-info"><a href="/u/6661704" user=""> <cite>风吹泪落</cite> </a> <span>2小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 0
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 22-->    </span></div>
+                </li>
+                <li><a href="/u/6663552" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/BB9AD66FDDC496D56987E544A185E584/100" alt="老狐狸"> </a>
+                    <h2><a href="/jie/14671/">关于时间插件问题， 不知是我编写有问题 还是存在BUG，求解！！</a></h2>
+                    <div class="fly-list-info"><a href="/u/6663552" user=""> <cite>老狐狸</cite> </a> <span>2小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 80</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 4
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 36-->    </span></div>
+                </li>
+                <li><a href="/u/2050104" class="fly-avatar"> <img
+                        src="http://q.qlogo.cn/qqapp/101235792/AED7EB49350FBCF3B36E6D924C5A4959/100" alt="Punk"> </a>
+                    <h2><a href="/jie/14670/">数据表格固定列right无效</a></h2>
+                    <div class="fly-list-info"><a href="/u/2050104" user=""> <cite>Punk</cite> </a> <span>2小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 0
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 18-->    </span></div>
+                </li>
+                <li><a href="/u/3198216" class="fly-avatar"> <img
+                        src="//cdn.layui.com/avatar/3198216.jpg?t=1498050138416" alt="驊驊龔頾"> </a>
+                    <h2><a href="/jie/14669/">layui2.x版本，在table中添加switch开关的方法</a> <span
+                            class="fly-badge fly-badge-good">精帖</span></h2>
+                    <div class="fly-list-info"><a href="/u/3198216" user=""> <cite>驊驊龔頾</cite> <i
+                            class="fly-badge fly-badge-vip">VIP2</i> </a> <span>2小时前</span> <span>分享</span> <span
+                            class="fly-list-kiss" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 10</span> <span
+                            class="fly-list-nums">       <i class="iconfont icon-pinglun1" title="回答"></i> 4
+                        <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 110-->    </span></div>
+                </li>
+                <li><a href="/u/4397904" class="fly-avatar"> <img src="//res.layui.com/images/fly/avatar/5.jpg"
+                                                                  alt="storys_zhang"> </a>
+                    <h2><a href="/jie/14667/">table插件field字段带点不认识</a></h2>
+                    <div class="fly-list-info"><a href="/u/4397904" user=""> <cite>storys_zhang</cite> </a>
+                        <span>2小时前</span> <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 3
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 31-->    </span></div>
+                </li>
+                <li><a href="/u/4397904" class="fly-avatar"> <img src="//res.layui.com/images/fly/avatar/5.jpg"
+                                                                  alt="storys_zhang"> </a>
+                    <h2><a href="/jie/14666/">新版table没有序号列吗</a></h2>
+                    <div class="fly-list-info"><a href="/u/4397904" user=""> <cite>storys_zhang</cite> </a>
+                        <span>2小时前</span> <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 2
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 32-->    </span></div>
+                </li>
+                <li><a href="/u/6658008" class="fly-avatar"> <img
+                        src="//cdn.layui.com/avatar/6658008.png?t=1505289257505" alt="真难"> </a>
+                    <h2><a href="/jie/14665/">之前用的 1.0.9 更新了 2.1.3 版本后，使用laydate一直报错</a></h2>
+                    <div class="fly-list-info"><a href="/u/6658008" user=""> <cite>真难</cite> </a> <span>3小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 8
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 86-->    </span></div>
+                </li>
+                <li><a href="/u/6530664" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/D1F37A17E832BC2D608F22806E31ECDA/100" alt="渊默"> </a>
+                    <h2><a href="/jie/14664/">iframe页中富文本编辑器的渲染</a></h2>
+                    <div class="fly-list-info"><a href="/u/6530664" user=""> <cite>渊默</cite> </a> <span>3小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 10
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 32-->    </span></div>
+                </li>
+                <li><a href="/u/6285720" class="fly-avatar"> <img src="//res.layui.com/images/fly/avatar/5.jpg"
+                                                                  alt="liuhuan"> </a>
+                    <h2><a href="/jie/14663/">如何获取select的change的事件呢</a></h2>
+                    <div class="fly-list-info"><a href="/u/6285720" user=""> <cite>liuhuan</cite> </a> <span>3小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 5
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 76-->    </span></div>
+                </li>
+                <li><a href="/u/5077800" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/49371D4D8870ADBCB451E1B89AE80D30/100" alt="澕婯哋尒忸"> </a>
+                    <h2><a href="/jie/14662/">弹出层数据表格中的工具栏怎么添加</a></h2>
+                    <div class="fly-list-info"><a href="/u/5077800" user=""> <cite>澕婯哋尒忸</cite> </a> <span>3小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 0
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 17-->    </span></div>
+                </li>
+                <li><a href="/u/4754232" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/58BF07C89DF1374FBF81FA343E6E3494/100" alt="码农27"> </a>
+                    <h2><a href="/jie/14661/">如果设置不要秒的时间插件</a></h2>
+                    <div class="fly-list-info"><a href="/u/4754232" user=""> <cite>码农27</cite> </a> <span>3小时前</span>
+                        <span>建议</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 2
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 25-->    </span></div>
+                </li>
+                <li><a href="/u/6490512" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/20EDB5C4280B05B7780ABBA8C7236753/100" alt="simple311"> </a>
+                    <h2><a href="/jie/14660/">导航栏能做成多级树状结构的吗？</a></h2>
+                    <div class="fly-list-info"><a href="/u/6490512" user=""> <cite>simple311</cite> </a>
+                        <span>3小时前</span> <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 0
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 22-->    </span></div>
+                </li>
+                <li><a href="/u/6660528" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/170209E7874FFCC4A2DC49F999F0A607/100" alt="ABCEHJ"> </a>
+                    <h2><a href="/jie/14659/">layDate 的参数min在日期分隔符 / 下存在异常</a></h2>
+                    <div class="fly-list-info"><a href="/u/6660528" user=""> <cite>ABCEHJ</cite> </a> <span>3小时前</span>
+                        <span>建议</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 3
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 43-->    </span></div>
+                </li>
+                <li><a href="/u/6661536" class="fly-avatar"> <img
+                        src="//q.qlogo.cn/qqapp/101235792/9F78EF8AC44B278CBAC66B0671C85A24/100" alt="sjh2005"> </a>
+                    <h2><a href="/jie/14658/">layer弹出层关闭事件为何不执行？</a></h2>
+                    <div class="fly-list-info"><a href="/u/6661536" user=""> <cite>sjh2005</cite> </a> <span>3小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 2
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 31-->    </span></div>
+                </li>
+                <li><a href="/u/1740984" class="fly-avatar"> <img
+                        src="http://q.qlogo.cn/qqapp/101235792/9D5A784888C07B73AA625334280ED067/100" alt="从小就很酷"> </a>
+                    <h2><a href="/jie/14657/">select城市联动的时候无法获取到值</a></h2>
+                    <div class="fly-list-info"><a href="/u/1740984" user=""> <cite>从小就很酷</cite> </a> <span>3小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 5
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 33-->    </span></div>
+                </li>
+                <li><a href="/u/2889936" class="fly-avatar"> <img
+                        src="http://q.qlogo.cn/qqapp/101235792/2643DB75158E5BEED71AE926EE9E2E49/100" alt="舍不得"> </a>
+                    <h2><a href="/jie/14656/">大家谁知道文件上传的接口（后台）怎么写 急急急急！！！！！！！！</a></h2>
+                    <div class="fly-list-info"><a href="/u/2889936" user=""> <cite>舍不得</cite> </a> <span>3小时前</span>
+                        <span>提问</span> <span class="fly-list-kiss" title="悬赏飞吻"><i
+                                class="iconfont icon-kiss"></i> 10</span> <span class="fly-list-nums">       <i
+                                class="iconfont icon-pinglun1" title="回答"></i> 5
+                            <!--<i class="iconfont icon-liulanyanjing" title="人气"></i> 53-->    </span></div>
+                </li>
+            </ul>
+            <div style="text-align: center">
+                <div class="laypage-main"><a href="/jie/page/2/" class="laypage-next">更多求解</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="edge">
+        <div class="jie-add"><a href="/jie/add/" class="layui-btn layui-btn-big" style="width: 100%;">发表新帖</a>
+            <!--<a href="javascript:layer.msg('尚未开放');" class="layui-btn layui-btn-big layui-btn-normal" style="margin-left: 10px;">共享组件</a>-->
+        </div>
+        <!--    <div class="fly-panel">      <h3 class="fly-panel-title">板块类别</h3>      <dl>              <dd><a href="/c/0/">提问</a></dd>              <dd><a href="/c/1/">建议</a></dd>              <dd><a href="/c/99/">分享</a></dd>              <dd><a href="/c/100/">讨论</a></dd>              <dd><a href="/c/168/">公告</a></dd>              <dd><a href="/c/169/">动态</a></dd>            </dl>    </div>-->
+        <div class="fly-panel leifeng-rank"><h3 class="fly-panel-title">回贴月榜</h3>
+            <dl>
+                <dd><a href="/u/168"><img
+                        src="//cdn.layui.com/avatar/168.jpg?t=1503536597755"><cite>贤心</cite><i>367次回答</i></a></dd>
+                <dd><a href="/u/6182064"><img src="//res.layui.com/images/fly/avatar/7.jpg"><cite>Andre_Z</cite><i>333次回答</i></a>
+                </dd>
+                <dd><a href="/u/5726952"><img
+                        src="//q.qlogo.cn/qqapp/101235792/EA4443FFBF4029057EFF5F51D13DCB6E/100"><cite>飞天神猪</cite><i>216次回答</i></a>
+                </dd>
+                <dd><a href="/u/11424"><img src="/avatar/11424.gif"><cite>SMALL</cite><i>190次回答</i></a></dd>
+                <dd><a href="/u/6256152"><img
+                        src="//cdn.layui.com/avatar/6256152.gif?t=1504689968902"><cite>炸毛的小老虎</cite><i>171次回答</i></a>
+                </dd>
+                <dd><a href="/u/4338600"><img
+                        src="//q.qlogo.cn/qqapp/101235792/1FF2A68E3698A4A82A68A7F786F6C4DE/100"><cite>Dick</cite><i>171次回答</i></a>
+                </dd>
+                <dd><a href="/u/6064968"><img
+                        src="//q.qlogo.cn/qqapp/101235792/21F0961A7243DC371D026180CDF40095/100"><cite>用个名字真难</cite><i>164次回答</i></a>
+                </dd>
+                <dd><a href="/u/4915176"><img src="//cdn.layui.com/avatar/4915176.jpg?t=1504233653134"><cite>午夜惊魂</cite><i>133次回答</i></a>
+                </dd>
+                <dd><a href="/u/4237464"><img
+                        src="http://q.qlogo.cn/qqapp/101235792/D06E5B3B3417FB5FDD44FB49A7FC497D/100"><cite>じ辰╆紫天せ</cite><i>110次回答</i></a>
+                </dd>
+                <dd><a href="/u/6339648"><img
+                        src="//q.qlogo.cn/qqapp/101235792/9BD3B5C1CE44CA3BB28630504C4F8B1E/100"><cite>随❤所☆预</cite><i>98次回答</i></a>
+                </dd>
+                <dd><a href="/u/4925424"><img
+                        src="//q.qlogo.cn/qqapp/101235792/0645B6F031DC075395CF6628FE25CC06/100"><cite>天外飞仙</cite><i>96次回答</i></a>
+                </dd>
+                <dd><a href="/u/5811960"><img
+                        src="//q.qlogo.cn/qqapp/101235792/953E82ABE5A0C205B7B53223A2D4C54A/100"><cite>Soulmate</cite><i>95次回答</i></a>
+                </dd>
+                <dd><a href="/u/542304"><img
+                        src="http://fly.layui.com/avatar/542304.png"><cite>simpleno</cite><i>89次回答</i></a></dd>
+                <dd><a href="/u/26880"><img src="//cdn.layui.com/avatar/26880.gif?t=1496647914767"><cite>小魔方</cite><i>89次回答</i></a>
+                </dd>
+                <dd><a href="/u/5427912"><img
+                        src="//res.layui.com/images/fly/avatar/5.jpg"><cite>一根燃烧的胸毛</cite><i>84次回答</i></a></dd>
+                <dd><a href="/u/4340280"><img
+                        src="//cdn.layui.com/avatar/4340280.jpg?t=1497249172193"><cite>AggerChen</cite><i>76次回答</i></a>
+                </dd>
+                <dd><a href="/u/4408320"><img
+                        src="//res.layui.com/images/fly/avatar/0.jpg"><cite>誓yi個人</cite><i>76次回答</i></a></dd>
+                <dd><a href="/u/6211128"><img
+                        src="//cdn.layui.com/avatar/6211128.png?t=1504701210194"><cite>Oswald</cite><i>74次回答</i></a>
+                </dd>
+                <dd><a href="/u/5393304"><img
+                        src="//cdn.layui.com/avatar/5393304.jpg?t=1503634102116"><cite>indifferent</cite><i>61次回答</i></a>
+                </dd>
+                <dd><a href="/u/6276312"><img
+                        src="//q.qlogo.cn/qqapp/101235792/A0FF30B262C9E5FB25D3CBD2920079EB/100"><cite>interlij</cite><i>56次回答</i></a>
+                </dd>
+            </dl>
+        </div>
+        <div class="fly-panel"><h3 class="fly-panel-title">温馨通道</h3>
+            <ul class="fly-notice">
+                <li><a href="http://fly.layui.com/jie/13435/" target="_blank"> 关于社区飞吻的消耗与增加 </a></li>
+                <li><a href="http://fly.layui.com/jie/5366/" target="_blank"> layui 1.x 版本常见问题的处理和实用干货集锦 </a></li>
+                <li><a href="http://fly.layui.com/jie/4281/" target="_blank">layui 的 GitHub 及 开源中国码云 仓库地址</a></li>
+                <li><a href="http://fly.layui.com/jie/8157/" target="_blank">下载“Fly社区”页面模板：Fly Template v2.0</a></li>
+            </ul>
+        </div>
+        <dl class="fly-panel fly-list-one">
+            <dt class="fly-panel-title">近期热议</dt>
+            <dd><a href="/jie/14263/">全是bug,引入了js ,然而点击上去一点卵显示没有</a> <span><i class="iconfont"></i> 52</span></dd>
+            <dd><a href="/jie/14346/">方法渲染table数据请求异常</a> <span><i class="iconfont"></i> 41</span></dd>
+            <dd><a href="/jie/14433/">社区飞吻达到一定数目，将可成为 “layui 高级应用者”</a> <span><i class="iconfont"></i> 38</span></dd>
+            <dd><a href="/jie/14636/">原有表格转换成数据表格，表头排序出错</a> <span><i class="iconfont"></i> 32</span></dd>
+            <dd><a href="/jie/14486/">静态转数据表格 这个算BUG吗</a> <span><i class="iconfont"></i> 28</span></dd>
+            <dd><a href="/jie/14597/">基于layUI2.0的二次前端开发页面，欢迎提出建议和修改，已附上下载源码</a> <span><i
+                    class="iconfont"></i> 27</span></dd>
+            <dd><a href="/jie/14648/">layui 2.1.3 发布，进一步稳定</a> <span><i class="iconfont"></i> 27</span></dd>
+            <dd><a href="/jie/14446/">layui.table如何设置某一列隐藏</a> <span><i class="iconfont"></i> 27</span></dd>
+            <dd><a href="/jie/14332/">好的用户界面，界面设计的一些技巧 献给前端攻城狮</a> <span><i class="iconfont"></i> 25</span></dd>
+            <dd><a href="/jie/14503/">layer.open 弹出层关闭后为什么不隐藏？？</a> <span><i class="iconfont"></i> 24</span></dd>
+            <dd><a href="/jie/14582/">关于最新版 Chrome 61.0.3163.79 影响到 layer 的问题</a> <span><i
+                    class="iconfont"></i> 22</span></dd>
+            <dd><a href="/jie/14509/">分享TABLE部分代码给新手快速上手！</a> <span><i class="iconfont"></i> 22</span></dd>
+            <dd><a href="/jie/14398/">关于response返回数据自定义问题</a> <span><i class="iconfont"></i> 19</span></dd>
+            <dd><a href="/jie/14381/">500多个checkbox渲染有明显迟顿，加了lay-ignore仍然有迟顿</a> <span><i
+                    class="iconfont"></i> 19</span></dd>
+            <dd><a href="/jie/14293/">富文本编辑器上传图片问题</a> <span><i class="iconfont"></i> 18</span></dd>
+        </dl>
+        <div class="fly-panel" style="padding: 20px 0; text-align: center;"><img
+                src="//cdn.layui.com/upload/2017_8/168_1501894831075_19619.jpg" style="max-width: 100%;" alt="layui">
+            <p style="position: relative; top: 10px; color: #666;">微信扫码关注 layui 公众号</p></div>
+        <div class="fly-panel fly-link"><h3 class="fly-panel-title">友情链接</h3>
+            <dl>
+                <dd><a href="http://layim.layui.com/" target="_blank">WebIM</a></dd>
+                <dd></dd>
+                <dd><a href="http://layer.layui.com/" target="_blank">layer</a></dd>
+                <dd></dd>
+                <dd><a href="http://www.bejson.com/" target="_blank">JSON在线工具</a></dd>
+                <dd></dd>
+                <dd><a href="http://www.smeoa.com/" target="_blank">小微OA</a></dd>
+                <dd></dd>
+                <dd><a href="http://www.fineui.com/" target="_blank">FineUI开源控件</a></dd>
+                <dd></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+    <p>
+        <a href="http://fly.layui.com/">Fly社区</a>"2017 @"
+        <a href="http://www.layui.com/">layui.com</a>
+    </p>
+</div>
+
+
+</body>
+</html>

@@ -83,6 +83,7 @@ pre{padding: 10px 15px; margin: 10px 0; font-size: 12px; border-left: 6px solid 
 .page-title{position: relative; font-size: 14px; margin: 0 0 20px; padding: 10px 15px; line-height:30px; background-color: #F2F2F2}
 .edge .page-title{width:auto; margin: 0; line-height: 38px; padding: 0 15px; border: none; background-color: #f2f2f2;}
 .fly-editbox{position:relative;}
+.fly-avatar{position: absolute; left: 15px; top: 15px;}
 
 .icon-touxiang{display:inline-block; color:#A9B7B7; font-size: 35px;}
 .fly-error{color:#c00;}
