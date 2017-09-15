@@ -19,19 +19,20 @@ class UserFormRegister(forms.Form):
     email = forms.EmailField(max_length=100)
     password1 = forms.CharField(widget=forms.PasswordInput())
     password2 = forms.CharField(widget=forms.PasswordInput())
-    # captcha = CaptchaField(error_messages={"invalid": u"验证码错误"})
+    captcha = CaptchaField(error_messages={"invalid": u"验证码错误"})
 
 
 # 登录表单
 class UserFormLogin(forms.Form):
     email = forms.EmailField(max_length=100)
     password = forms.CharField(widget=forms.PasswordInput())
-    # captcha = CaptchaField(error_messages={"invalid": u"验证码错误"})
+    captcha = CaptchaField(error_messages={"invalid": u"验证码错误"})
 
 
 # 登录页面
 def login(request):
-    return render(request, 'blog/login.html')
+    user_formlogin = UserFormLogin()
+    return render(request, 'blog/login.html', {'user_formlogin': user_formlogin})
 
 
 # 登录操作页面
@@ -68,7 +69,8 @@ def login_action(request):
 
 # 注册页面
 def register(request):
-    return render(request, 'blog/register.html')
+    user_formregister = UserFormRegister()
+    return render(request, 'blog/register.html', {'user_formregister': user_formregister}, locals())
 
 
 # 注册操作页面
@@ -81,14 +83,12 @@ def register_action(request):
             password = user_formregister.cleaned_data['password1']
             password1 = user_formregister.cleaned_data['password1']
             password2 = user_formregister.cleaned_data['password2']
-            errors = []
 
             if User.objects.filter(email__exact=email):
                 return render(request, 'blog/register.html', {'errors': '该用户名已存在'})
 
             if password2 != password1:
-                errors.append('两次输入密码不一致')
-                return render(request, 'blog/register.html', {'errors': errors})
+                return render(request, 'blog/register.html', {'errors': '两次输入密码不一致'})
 
             # 添加到数据库中
             user = User.objects.create(email=email, password=password)

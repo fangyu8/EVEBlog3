@@ -65,24 +65,25 @@
                                 </div>
                             </div>
 
-{##}
-{#                            <div class="layui-form-item">#}
-{#                                <label for="L_vercode" class="layui-form-label">验证码</label>#}
-{#                                <div class="layui-input-inline">#}
-{#                                    <input type="text" id="L_vercode" name="vercode" required lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">#}
-{#                                     <span style="color: #cc0000;">{{ user_formlogin.captcha }}</span>#}
-{#                                </div>#}
-{#                                <div class="layui-form-mid">#}
-{#                                    <button id='js-captcha-refresh' type="button">刷新验证码</button>#}
-{#                                    <span style="color: #cc0000;">{{ user_formlogin.captcha }}</span>#}
-{#                                </div>#}
-{#                            </div>#}
+
+                            <div class="layui-form-item captcha1 {% if user_formlogin.errors.captcha %} errorput{% endif %}">
+                                <label for="L_vercode" class="layui-form-label">验证码</label>
+                                <div class="layui-input-inline">
+                                    {#                                   <input type="text" id="L_vercode" name="vercode" required lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">#}
+                                    <span style="color: #cc0000;">{{ user_formlogin.captcha }}</span>
+
+                                </div>
+                                <div class="layui-form-mid">
+                                    <button class='js-captcha-refresh'>刷新验证码</button>
+                                </div>
+                            </div>
 
 
                             <div class="layui-form-item">
                                 <button class="layui-btn" lay-filter="*" lay-submit>立即登录</button>
                                 <span style="padding-left: 20px;"><a href="{% url 'blog:forget' %}">忘记密码?</a></span>
                             </div>
+
                             {{ errors }}
 
                         </form>
@@ -105,16 +106,17 @@
     </p>
 </div>
 
-{#<script>#}
-{#    $('#js-captcha-refresh').click(function(){#}
-{#         $.get("?newsn=1", function(result){#}
-{#            alert(result);#}
-{#             $('.captcha').attr("src",result);#}
-{#             $('#id_captcha_0').attr("value",result.split('/')[3]);#}
-{#          });#}
-{#    return false;#}
-{#});#}
-{#</script>#}
+<script>
+$('.js-captcha-refresh').click(function(){
+    $user_formlogin = $(this).parents('user_formlogin');
+
+    $.getJSON($(this).data('url'), {}, function(json) {
+        // This should update your captcha image src and captcha hidden input
+    });
+
+    return false;
+});
+</script>
 
 </body>
 </html>
